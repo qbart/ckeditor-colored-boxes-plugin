@@ -1,0 +1,2 @@
+ckeditor-colored-boxes-plugin
+=============================
