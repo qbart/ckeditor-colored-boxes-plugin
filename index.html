@@ -13,14 +13,20 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title>Ckeditor coloredboxes plugin by b-wojtowicz</title>
+    <!-- assets needed for demo -->
+    <link rel="stylesheet" type="text/css" href="demo/farbtastic/farbtastic.css" />
+    <script type="text/javascript" src="demo/jquery-1.8.1.min.js"></script>
+    <script type="text/javascript" src="demo/farbtastic/farbtastic.js"></script>
+    <script type="text/javascript" src="demo/ckeditor/ckeditor.js"></script>
+
+    <title>Ckeditor coloredboxes plugin by Bartlomiej Wojtowicz</title>
   </head>
 
   <body>
     <header>
       <div class="inner">
         <h1>Ckeditor coloredboxes plugin</h1>
-        <h2>Ckeditor, colored boxes, frames, plugin</h2>
+        <h2>Colored boxes in CKEDITOR</h2>
         <a href="https://github.com/b-wojtowicz/ckeditor-colored-boxes-plugin" class="button"><small>View project on</small>GitHub</a>
       </div>
     </header>
@@ -28,32 +34,62 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <h3>Welcome to GitHub Pages.</h3>
+          <h3>Welcome to CKEDITOR coloredboxes plugin.</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>
+</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<p>
+<textarea cols="100" class="ckeditor" id="editor" name="editor" rows="20">
+<div class="coloredbox" data-bgcolor="#BCE8F1" data-fgcolor="#3A87AD" style="margin-bottom: 1px; padding: 6px 15px; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; color: rgb(58, 135, 173); background-color: rgb(188, 232, 241); ">
+  This is example text...</div>
+<div class="coloredbox" data-bgcolor="#BCE8F1" data-fgcolor="#3A87AD" style="margin-bottom: 1px; padding: 6px 15px; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; color: rgb(58, 173, 70); background-color: rgb(188, 241, 198); ">
+  You can edit colors...</div>
+<div class="coloredbox" data-bgcolor="#BCE8F1" data-fgcolor="#3A87AD" style="margin-bottom: 1px; padding: 6px 15px; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; color: rgb(173, 128, 58); background-color: rgb(241, 233, 188); ">
+  And access edit panel using context menu or&nbsp;&#39;T&#39;&nbsp;icon in CKEDITOR toolbar</div>
+<div class="coloredbox" data-bgcolor="#BCE8F1" data-fgcolor="#3A87AD" style="margin-bottom: 1px; padding: 6px 15px; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; color: rgb(58, 173, 70); background-color: rgb(188, 241, 198); text-align: center; ">
+  <strong>Lorem</strong> ipsum dolor sit amet, consectetur adipiscing elit. Mauris porta ipsum vitae nulla suscipit auctor. In hac habitasse platea dictumst. <u>Etiam quis mattis erat. </u>Aliquam eget imperdiet leo. Praesent vitae arcu id nisi vestibulum <strike>viverra</strike>. Fusce tristique, massa elementum aliquam <em>lobortis</em>, eros eros convallis purus, eu commodo odio ipsum id sem. Sed lectus lacus, luctus sit amet consequat et, vestibulum quis mi.</div>
+<p>
+  &nbsp;</p>
+<p>
+  &nbsp;</p>
+</textarea>
+</p>
+
+<p>Add plugin to CKEDITOR config.js</p>
+
+<pre><code>config.extraPlugins = 'coloredboxes';
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>Add 'coloredboxes' icon to toolbar, for example:</p>
+<pre><code>{ name: 'paragraph', items : ['coloredboxes'] }</code></pre>
 
-<h3>Designer Templates</h3>
+<h3>3rd party libs</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>
+  Coloredboxes plugin depends on Farbtastic Color Picker
+  <a href="http://acko.net/blog/farbtastic-jquery-color-picker-plug-in/">(read more)</a>
+  I took this one because it's my favourite (but feel free to integrate other color pickers).
+</p>
 
-<h3>Rather Drive Stick?</h3>
+<p>
+  In order to make <strong>Coloredboxes</strong> to work you need to load Farbtastic in your head section.
+</p>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<pre><code>&lt;link rel="stylesheet" type="text/css" href="farbtastic/farbtastic.css" /&gt;
+&lt;script type="text/javascript" src="farbtastic/farbtastic.js"&gt;&lt;/script&gt;
+</code></pre>
 
-<h3>Authors and Contributors</h3>
+<p>If you have problem with integrating Farbtastic into your site, please visit author page <a href="http://acko.net/blog/farbtastic-jquery-color-picker-plug-in/">here</a>.
+</p>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
 
-<h3>Support or Contact</h3>
+<h3>Author</h3>
+<p>
+Plugin has been created by Bartlomiej Wojtowicz <a href="https://github.com/b-wojtowicz">(b-wojtowicz)</a>.
+</p>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+
         </section>
 
         <aside id="sidebar">
@@ -73,6 +109,6 @@ $ git checkout gh-pages
       </div>
     </div>
 
-  
+
   </body>
 </html>
